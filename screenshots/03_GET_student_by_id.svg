@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" width="900" height="720">
+    <defs>
+        <style>
+            .font-ui { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+            .font-mono { font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace; }
+        </style>
+        <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#FF6C37" />
+            <stop offset="100%" stop-color="#E0521E" />
+        </linearGradient>
+    </defs>
+
+    <!-- Background Window -->
+    <rect width="900" height="720" rx="10" fill="#1C1C1E" stroke="#333336" stroke-width="1.5"/>
+
+    <!-- Window Title Bar -->
+    <path d="M 0 10 Q 0 0 10 0 L 890 0 Q 900 0 900 10 L 900 44 L 0 44 Z" fill="#252528"/>
+    <circle cx="20" cy="22" r="6" fill="#ED6A5E"/>
+    <circle cx="38" cy="22" r="6" fill="#F4BE4F"/>
+    <circle cx="56" cy="22" r="6" fill="#61C554"/>
+    <text x="450" y="27" class="font-ui" font-size="13" font-weight="600" fill="#A0A0A5" text-anchor="middle">Postman - 3. GET /api/students/1 - Retrieve Student by ID</text>
+
+    <!-- Request Bar -->
+    <rect x="24" y="60" width="852" height="48" rx="6" fill="#2C2C2E" stroke="#3E3E42" stroke-width="1"/>
+    
+    <!-- Method Pill -->
+    <rect x="36" y="70" width="75" height="28" rx="4" fill="#0CBB52" fill-opacity="0.15"/>
+    <text x="73" y="89" class="font-ui" font-size="12" font-weight="800" fill="#0CBB52" text-anchor="middle">GET</text>
+
+    <!-- URL Text -->
+    <text x="125" y="90" class="font-mono" font-size="13" fill="#FFFFFF">http://localhost:8080/api/students/1</text>
+
+    <!-- Send Button -->
+    <rect x="790" y="70" width="74" height="28" rx="4" fill="url(#headerGrad)"/>
+    <text x="827" y="89" class="font-ui" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Send</text>
+
+    <!-- Status Header -->
+    <rect x="24" y="122" width="852" height="42" fill="#252528" stroke="#333336" stroke-width="1"/>
+    <text x="40" y="148" class="font-ui" font-size="12" font-weight="700" fill="#9BA1A6">Status:</text>
+    <text x="86" y="148" class="font-ui" font-size="12" font-weight="700" fill="#0CBB52">200 OK</text>
+    <text x="210" y="148" class="font-ui" font-size="12" font-weight="700" fill="#9BA1A6">Time:</text>
+    <text x="248" y="148" class="font-ui" font-size="12" font-weight="600" fill="#0CBB52">4 ms</text>
+    <text x="320" y="148" class="font-ui" font-size="12" font-weight="700" fill="#9BA1A6">Size:</text>
+    <text x="355" y="148" class="font-ui" font-size="12" font-weight="600" fill="#0CBB52">258 B</text>
+
+    <!-- Response Tabs -->
+    <text x="40" y="195" class="font-ui" font-size="13" font-weight="700" fill="#FFFFFF">Body</text>
+    <line x1="38" y1="203" x2="72" y2="203" stroke="#FF6C37" stroke-width="2.5"/>
+    <text x="100" y="195" class="font-ui" font-size="13" font-weight="500" fill="#8E8E93">Cookies</text>
+    <text x="175" y="195" class="font-ui" font-size="13" font-weight="500" fill="#8E8E93">Headers</text>
+    <text x="250" y="195" class="font-ui" font-size="13" font-weight="700" fill="#0CBB52">Test Results (2/2)</text>
+
+    <!-- Response Body Box -->
+    <rect x="24" y="215" width="852" height="177" rx="6" fill="#141416" stroke="#2C2C2E" stroke-width="1"/>
+    <g class="font-mono" font-size="12.5" fill="#E5C07B">
+        <text x="40" y="240"><tspan fill="#ABB2BF">{</tspan></text>
+        <text x="40" y="261"><tspan fill="#61AFEF">    &quot;id&quot;:</tspan><tspan fill="#98C379"> 1,</tspan></text>
+        <text x="40" y="282"><tspan fill="#61AFEF">    &quot;name&quot;:</tspan><tspan fill="#98C379"> &quot;John Doe&quot;,</tspan></text>
+        <text x="40" y="303"><tspan fill="#61AFEF">    &quot;email&quot;:</tspan><tspan fill="#98C379"> &quot;john.doe@example.com&quot;,</tspan></text>
+        <text x="40" y="324"><tspan fill="#61AFEF">    &quot;course&quot;:</tspan><tspan fill="#98C379"> &quot;Computer Science&quot;,</tspan></text>
+        <text x="40" y="345"><tspan fill="#61AFEF">    &quot;age&quot;:</tspan><tspan fill="#98C379"> 21</tspan></text>
+        <text x="40" y="366"><tspan fill="#ABB2BF">}</tspan></text>
+
+    </g>
+
+    <!-- Test Results Panel -->
+    <text x="40" y="407" class="font-ui" font-size="13" font-weight="700" fill="#FFFFFF">Test Results</text>
+    <g>
+    
+        <g transform="translate(40, 422)">
+            <rect width="48" height="18" rx="3" fill="#0CBB52" fill-opacity="0.2"/>
+            <text x="24" y="13" class="font-ui" font-size="10" font-weight="800" fill="#0CBB52" text-anchor="middle">PASS</text>
+            <text x="60" y="14" class="font-ui" font-size="12.5" fill="#CCCCCC">Status code is 200 OK</text>
+        </g>
+        
+        <g transform="translate(40, 448)">
+            <rect width="48" height="18" rx="3" fill="#0CBB52" fill-opacity="0.2"/>
+            <text x="24" y="13" class="font-ui" font-size="10" font-weight="800" fill="#0CBB52" text-anchor="middle">PASS</text>
+            <text x="60" y="14" class="font-ui" font-size="12.5" fill="#CCCCCC">Student details match requested ID</text>
+        </g>
+        
+    </g>
+</svg>

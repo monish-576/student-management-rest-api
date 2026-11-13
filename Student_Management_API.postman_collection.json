@@ -1,0 +1,495 @@
+{
+	"info": {
+		"_postman_id": "c1f7b8a2-3b4e-4e6a-9f5a-8b1e4a7c2d9e",
+		"name": "Student Management System REST API",
+		"description": "Postman Collection for testing all REST API endpoints of the Student Management System built with Spring Boot, Spring Data JPA, and MySQL.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Add Student (John Doe)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201 Created\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.test(\"Student ID is generated and returned\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('id');",
+							"    pm.expect(jsonData.name).to.eql(\"John Doe\");",
+							"    pm.expect(jsonData.email).to.eql(\"john.doe@example.com\");",
+							"    pm.expect(jsonData.course).to.eql(\"Computer Science\");",
+							"    pm.expect(jsonData.age).to.eql(21);",
+							"    pm.collectionVariables.set(\"studentId\", jsonData.id);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"course\": \"Computer Science\",\n    \"age\": 21\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/students",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"students"
+					]
+				},
+				"description": "Endpoint to add a new student record. Expects 201 Created."
+			},
+			"response": []
+		},
+		{
+			"name": "2. Add Student (Jane Smith)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201 Created\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.test(\"Verify student details\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(\"Jane Smith\");",
+							"    pm.expect(jsonData.email).to.eql(\"jane.smith@example.com\");",
+							"    pm.expect(jsonData.course).to.eql(\"Data Science\");",
+							"    pm.expect(jsonData.age).to.eql(22);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Jane Smith\",\n    \"email\": \"jane.smith@example.com\",\n    \"course\": \"Data Science\",\n    \"age\": 22\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/students",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"students"
+					]
+				},
+				"description": "Add another student enrolled in Data Science."
+			},
+			"response": []
+		},
+		{
+			"name": "3. Add Student (Alex Johnson)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201 Created\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.test(\"Verify student details\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(\"Alex Johnson\");",
+							"    pm.expect(jsonData.email).to.eql(\"alex.johnson@example.com\");",
+							"    pm.expect(jsonData.course).to.eql(\"Computer Science\");",
+							"    pm.expect(jsonData.age).to.eql(20);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Alex Johnson\",\n    \"email\": \"alex.johnson@example.com\",\n    \"course\": \"Computer Science\",\n    \"age\": 20\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/students",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"students"
+					]
+				},
+				"description": "Add third student enrolled in Computer Science."
+			},
+			"response": []
+		},
+		{
+			"name": "4. Get All Students",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response is an array with students\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.be.an('array');",
+							"    pm.expect(jsonData.length).to.be.at.least(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/students",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"students"
+					]
+				},
+				"description": "Retrieve all students in the database."
+			},
+			"response": []
+		},
+		{
+			"name": "5. Get Student By ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Student details match requested ID\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('id');",
+							"    pm.expect(jsonData).to.have.property('name');",
+							"    pm.expect(jsonData).to.have.property('email');",
+							"    pm.expect(jsonData).to.have.property('course');",
+							"    pm.expect(jsonData).to.have.property('age');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/students/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"students",
+						"1"
+					]
+				},
+				"description": "Retrieve a specific student by primary key ID."
+			},
+			"response": []
+		},
+		{
+			"name": "6. Update Student By ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Student updated correctly\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(\"John Doe Updated\");",
+							"    pm.expect(jsonData.course).to.eql(\"Software Engineering\");",
+							"    pm.expect(jsonData.age).to.eql(22);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Doe Updated\",\n    \"email\": \"john.doe@example.com\",\n    \"course\": \"Software Engineering\",\n    \"age\": 22\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/students/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"students",
+						"1"
+					]
+				},
+				"description": "Update details of an existing student by ID."
+			},
+			"response": []
+		},
+		{
+			"name": "7. Get Students By Course",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"All returned students belong to requested course\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.be.an('array');",
+							"    jsonData.forEach(function(student) {",
+							"        pm.expect(student.course.toLowerCase()).to.eql(\"computer science\");",
+							"    });",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/students/course/Computer Science",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"students",
+						"course",
+						"Computer Science"
+					]
+				},
+				"description": "Retrieve all students enrolled in a specific course."
+			},
+			"response": []
+		},
+		{
+			"name": "8. Delete Student By ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Success message returned\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.message).to.include(\"Student deleted successfully\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/students/2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"students",
+						"2"
+					]
+				},
+				"description": "Delete a student by ID."
+			},
+			"response": []
+		},
+		{
+			"name": "9. Error Case - Get Non-Existent Student (404)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404 Not Found\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"pm.test(\"Error response contains meaningful message\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(404);",
+							"    pm.expect(jsonData.error).to.eql(\"Not Found\");",
+							"    pm.expect(jsonData.message).to.include(\"Student not found with ID: 999\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/students/999",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"students",
+						"999"
+					]
+				},
+				"description": "Verify exception handling returns 404 Not Found when ID does not exist."
+			},
+			"response": []
+		},
+		{
+			"name": "10. Error Case - Update Non-Existent Student (404)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404 Not Found\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"pm.test(\"Error response contains 404\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Ghost Student\",\n    \"email\": \"ghost@example.com\",\n    \"course\": \"Physics\",\n    \"age\": 25\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/students/999",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"students",
+						"999"
+					]
+				},
+				"description": "Verify 404 error when updating a non-existent student ID."
+			},
+			"response": []
+		},
+		{
+			"name": "11. Error Case - Delete Non-Existent Student (404)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404 Not Found\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"pm.test(\"Error response contains 404\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/students/999",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"students",
+						"999"
+					]
+				},
+				"description": "Verify 404 error when deleting a non-existent student ID."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "studentId",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
+

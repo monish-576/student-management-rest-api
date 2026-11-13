@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 800" width="900" height="800">
+    <defs>
+        <style>
+            .font-ui { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+            .font-mono { font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace; }
+        </style>
+        <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#FF6C37" />
+            <stop offset="100%" stop-color="#E0521E" />
+        </linearGradient>
+    </defs>
+
+    <!-- Background Window -->
+    <rect width="900" height="800" rx="10" fill="#1C1C1E" stroke="#333336" stroke-width="1.5"/>
+
+    <!-- Window Title Bar -->
+    <path d="M 0 10 Q 0 0 10 0 L 890 0 Q 900 0 900 10 L 900 44 L 0 44 Z" fill="#252528"/>
+    <circle cx="20" cy="22" r="6" fill="#ED6A5E"/>
+    <circle cx="38" cy="22" r="6" fill="#F4BE4F"/>
+    <circle cx="56" cy="22" r="6" fill="#61C554"/>
+    <text x="450" y="27" class="font-ui" font-size="13" font-weight="600" fill="#A0A0A5" text-anchor="middle">Postman - 8. Postman Newman CLI - 22/22 Assertions Passed</text>
+
+    <!-- Request Bar -->
+    <rect x="24" y="60" width="852" height="48" rx="6" fill="#2C2C2E" stroke="#3E3E42" stroke-width="1"/>
+    
+    <!-- Method Pill -->
+    <rect x="36" y="70" width="75" height="28" rx="4" fill="#FF6C37" fill-opacity="0.15"/>
+    <text x="73" y="89" class="font-ui" font-size="12" font-weight="800" fill="#FF6C37" text-anchor="middle">RUNNER</text>
+
+    <!-- URL Text -->
+    <text x="125" y="90" class="font-mono" font-size="13" fill="#FFFFFF">Student_Management_API.postman_collection.json</text>
+
+    <!-- Send Button -->
+    <rect x="790" y="70" width="74" height="28" rx="4" fill="url(#headerGrad)"/>
+    <text x="827" y="89" class="font-ui" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Send</text>
+
+    <!-- Status Header -->
+    <rect x="24" y="122" width="852" height="42" fill="#252528" stroke="#333336" stroke-width="1"/>
+    <text x="40" y="148" class="font-ui" font-size="12" font-weight="700" fill="#9BA1A6">Status:</text>
+    <text x="86" y="148" class="font-ui" font-size="12" font-weight="700" fill="#0CBB52">ALL PASSED (22/22)</text>
+    <text x="210" y="148" class="font-ui" font-size="12" font-weight="700" fill="#9BA1A6">Time:</text>
+    <text x="248" y="148" class="font-ui" font-size="12" font-weight="600" fill="#0CBB52">169 ms</text>
+    <text x="320" y="148" class="font-ui" font-size="12" font-weight="700" fill="#9BA1A6">Size:</text>
+    <text x="355" y="148" class="font-ui" font-size="12" font-weight="600" fill="#0CBB52">1.38 kB</text>
+
+    <!-- Response Tabs -->
+    <text x="40" y="195" class="font-ui" font-size="13" font-weight="700" fill="#FFFFFF">Body</text>
+    <line x1="38" y1="203" x2="72" y2="203" stroke="#FF6C37" stroke-width="2.5"/>
+    <text x="100" y="195" class="font-ui" font-size="13" font-weight="500" fill="#8E8E93">Cookies</text>
+    <text x="175" y="195" class="font-ui" font-size="13" font-weight="500" fill="#8E8E93">Headers</text>
+    <text x="250" y="195" class="font-ui" font-size="13" font-weight="700" fill="#0CBB52">Test Results (11/11)</text>
+
+    <!-- Response Body Box -->
+    <rect x="24" y="215" width="852" height="282" rx="6" fill="#141416" stroke="#2C2C2E" stroke-width="1"/>
+    <g class="font-mono" font-size="12.5" fill="#E5C07B">
+        <text x="40" y="240"><tspan fill="#E5C07B">┌─────────────────────────┬──────────┬────────┐</tspan></text>
+        <text x="40" y="261"><tspan fill="#E5C07B">│                         │ executed │ failed │</tspan></text>
+        <text x="40" y="282"><tspan fill="#E5C07B">├─────────────────────────┼──────────┼────────┤</tspan></text>
+        <text x="40" y="303"><tspan fill="#E5C07B">│              iterations │        1 │      0 │</tspan></text>
+        <text x="40" y="324"><tspan fill="#E5C07B">│                requests │       11 │      0 │</tspan></text>
+        <text x="40" y="345"><tspan fill="#E5C07B">│            test-scripts │       11 │      0 │</tspan></text>
+        <text x="40" y="366"><tspan fill="#E5C07B">│              assertions │       22 │      0 │</tspan></text>
+        <text x="40" y="387"><tspan fill="#E5C07B">├─────────────────────────┴──────────┴────────┤</tspan></text>
+        <text x="40" y="408"><tspan fill="#61AFEF">│ total run duration:</tspan><tspan fill="#98C379"> 169ms                   │</tspan></text>
+        <text x="40" y="429"><tspan fill="#61AFEF">│ total data received:</tspan><tspan fill="#98C379"> 1.38kB                 │</tspan></text>
+        <text x="40" y="450"><tspan fill="#61AFEF">│ average response time:</tspan><tspan fill="#98C379"> 5ms                  │</tspan></text>
+        <text x="40" y="471"><tspan fill="#E5C07B">└─────────────────────────────────────────────┘</tspan></text>
+
+    </g>
+
+    <!-- Test Results Panel -->
+    <text x="40" y="512" class="font-ui" font-size="13" font-weight="700" fill="#FFFFFF">Test Results</text>
+    <g>
+    
+        <g transform="translate(40, 527)">
+            <rect width="48" height="18" rx="3" fill="#0CBB52" fill-opacity="0.2"/>
+            <text x="24" y="13" class="font-ui" font-size="10" font-weight="800" fill="#0CBB52" text-anchor="middle">PASS</text>
+            <text x="60" y="14" class="font-ui" font-size="12.5" fill="#CCCCCC">1. Add Student (John Doe) - 201 Created</text>
+        </g>
+        
+        <g transform="translate(40, 553)">
+            <rect width="48" height="18" rx="3" fill="#0CBB52" fill-opacity="0.2"/>
+            <text x="24" y="13" class="font-ui" font-size="10" font-weight="800" fill="#0CBB52" text-anchor="middle">PASS</text>
+            <text x="60" y="14" class="font-ui" font-size="12.5" fill="#CCCCCC">2. Add Student (Jane Smith) - 201 Created</text>
+        </g>
+        
+        <g transform="translate(40, 579)">
+            <rect width="48" height="18" rx="3" fill="#0CBB52" fill-opacity="0.2"/>
+            <text x="24" y="13" class="font-ui" font-size="10" font-weight="800" fill="#0CBB52" text-anchor="middle">PASS</text>
+            <text x="60" y="14" class="font-ui" font-size="12.5" fill="#CCCCCC">3. Add Student (Alex Johnson) - 201 Created</text>
+        </g>
+        
+        <g transform="translate(40, 605)">
+            <rect width="48" height="18" rx="3" fill="#0CBB52" fill-opacity="0.2"/>
+            <text x="24" y="13" class="font-ui" font-size="10" font-weight="800" fill="#0CBB52" text-anchor="middle">PASS</text>
+            <text x="60" y="14" class="font-ui" font-size="12.5" fill="#CCCCCC">4. Get All Students - 200 OK</text>
+        </g>
+        
+        <g transform="translate(40, 631)">
+            <rect width="48" height="18" rx="3" fill="#0CBB52" fill-opacity="0.2"/>
+            <text x="24" y="13" class="font-ui" font-size="10" font-weight="800" fill="#0CBB52" text-anchor="middle">PASS</text>
+            <text x="60" y="14" class="font-ui" font-size="12.5" fill="#CCCCCC">5. Get Student By ID - 200 OK</text>
+        </g>
+        
+        <g transform="translate(40, 657)">
+            <rect width="48" height="18" rx="3" fill="#0CBB52" fill-opacity="0.2"/>
+            <text x="24" y="13" class="font-ui" font-size="10" font-weight="800" fill="#0CBB52" text-anchor="middle">PASS</text>
+            <text x="60" y="14" class="font-ui" font-size="12.5" fill="#CCCCCC">6. Update Student By ID - 200 OK</text>
+        </g>
+        
+        <g transform="translate(40, 683)">
+            <rect width="48" height="18" rx="3" fill="#0CBB52" fill-opacity="0.2"/>
+            <text x="24" y="13" class="font-ui" font-size="10" font-weight="800" fill="#0CBB52" text-anchor="middle">PASS</text>
+            <text x="60" y="14" class="font-ui" font-size="12.5" fill="#CCCCCC">7. Get Students By Course - 200 OK</text>
+        </g>
+        
+        <g transform="translate(40, 709)">
+            <rect width="48" height="18" rx="3" fill="#0CBB52" fill-opacity="0.2"/>
+            <text x="24" y="13" class="font-ui" font-size="10" font-weight="800" fill="#0CBB52" text-anchor="middle">PASS</text>
+            <text x="60" y="14" class="font-ui" font-size="12.5" fill="#CCCCCC">8. Delete Student By ID - 200 OK</text>
+        </g>
+        
+        <g transform="translate(40, 735)">
+            <rect width="48" height="18" rx="3" fill="#0CBB52" fill-opacity="0.2"/>
+            <text x="24" y="13" class="font-ui" font-size="10" font-weight="800" fill="#0CBB52" text-anchor="middle">PASS</text>
+            <text x="60" y="14" class="font-ui" font-size="12.5" fill="#CCCCCC">9. Error Case - Get Non-Existent Student - 404</text>
+        </g>
+        
+        <g transform="translate(40, 761)">
+            <rect width="48" height="18" rx="3" fill="#0CBB52" fill-opacity="0.2"/>
+            <text x="24" y="13" class="font-ui" font-size="10" font-weight="800" fill="#0CBB52" text-anchor="middle">PASS</text>
+            <text x="60" y="14" class="font-ui" font-size="12.5" fill="#CCCCCC">10. Error Case - Update Non-Existent Student - 404</text>
+        </g>
+        
+        <g transform="translate(40, 787)">
+            <rect width="48" height="18" rx="3" fill="#0CBB52" fill-opacity="0.2"/>
+            <text x="24" y="13" class="font-ui" font-size="10" font-weight="800" fill="#0CBB52" text-anchor="middle">PASS</text>
+            <text x="60" y="14" class="font-ui" font-size="12.5" fill="#CCCCCC">11. Error Case - Delete Non-Existent Student - 404</text>
+        </g>
+        
+    </g>
+</svg>

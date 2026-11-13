@@ -1,0 +1,46 @@
+# Maven build outputs
+target/
+*.class
+
+# macOS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+*.err
+*.pid
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+
+# VS Code
+.vscode/
+
+# Environment and sensitive configuration files
+.env
+*.env.local
+application-local.properties
+application-secret.properties
+
+# Temp files
+/tmp/
+*.tmp
+
